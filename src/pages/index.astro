@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 const pageTitle = 'astroWill';
 ---
 
@@ -19,11 +21,13 @@ const pageTitle = 'astroWill';
     <meta name="viewport" content="width=device-width" />
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
+    <Header />
 
     <h1>{pageTitle}</h1>
     <p>A personal site for Will Prouty</p>
+    <Footer />
+    <script>
+      import '../scripts/menu.js';
+    </script>
   </body>
 </html>
