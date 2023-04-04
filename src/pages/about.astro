@@ -1,10 +1,20 @@
 ---
+const pageTitle = 'About Me';
+const identity = {
+  firstName: 'Will',
+  lastName: 'Prouty',
+  location: 'Cotati, CA',
+  occupation: 'Floral Designer',
+  hobbies: ['coding', 'design', 'ikebana', 'canning'],
+};
+const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'github', 'Astro'];
 ---
 
 <html>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <title>{pageTitle}</title>
     <meta name="viewport" content="width=device-width" />
   </head>
   <body>
@@ -12,11 +22,29 @@
     <a href="/about">About</a>
     <a href="/blog">Blog</a>
 
-    <h1>My astroWill site</h1>
-    <h2>About Me</h2>
-    <h3>... and my Astro site!</h3>
+    <h1>My astro{identity.firstName} site</h1>
+    <h2>{pageTitle}</h2>
+    <h3>...and my Astro site!</h3>
 
     <p>I am working my way through my first tutorial with Astro.</p>
     <p>This site will become more interesting as I progress.</p>
+    <p>Here's a little about me:</p>
+    <ul>
+      <li>My name is {identity.firstName} {identity.lastName}.</li><li>
+        I live in {identity.location} and work as a {identity.occupation}.
+      </li>
+      {
+        identity.hobbies.length >= 2 && (
+          <li>
+            Two of my hobbies are: {identity.hobbies[0]} and{' '}
+            {identity.hobbies[1]}.
+          </li>
+        )
+      }
+    </ul>
+    <p>Some of my technological skills include:</p>
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
   </body>
 </html>
