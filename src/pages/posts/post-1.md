@@ -25,7 +25,7 @@ behind from the old code base during the update process.
 Astro uses server side rendering, but can also handle dynamic
 functionality, such as logged in users being able to add content. I was
 using 11ty SSG(static site generator) on my first version, interacting
-with Strapi headless CMS. i was having trouble figuring out how to
+with Strapi headless CMS. I was having trouble figuring out how to
 effectively send POST requests to my Strapi generated REST API from the
 static site. I wanted comments enabled on my blog, but my functions were
 only running at build time. There were ways around this, including using
