@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: Another quick one
 pubDate: 2023-04-03
 description: "What I'm liking so far..."

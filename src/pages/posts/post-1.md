@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'My First Post'
 pubDate: 2023-04-03
 description: 'This is the first post of my new blog built with Astro.'
@@ -8,8 +9,6 @@ image:
   alt: 'The Astro logo with the word One.'
 tags: ['astro', 'blogging', 'learning in public']
 ---
-
-# My First Post
 
 This is a blog to document my coding journey. I'm building this blog in
 Astro. Astro is a lightweight Javascript framework. I will use React in

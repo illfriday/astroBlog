@@ -1,6 +1,5 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = 'About Me';
 const identity = {
   firstName: 'Will',
@@ -19,67 +18,50 @@ const skillTextTransform = 'uppercase';
 import '../styles/global.css';
 ---
 
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;0,700;0,900;1,200;1,400;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <title>{pageTitle}</title>
-    <style define:vars={{ skillColor, skillFontWeight, skillTextTransform }}>
-      h1 {
-        color: grey;
-        font-size: 4rem;
-      }
-      .skill {
-        color: var(--skillColor);
-        text-transform: var(--skillTextTransform);
-        font-weight: var(--skillFontWeight);
-      }
-    </style>
-    <meta name="viewport" content="width=device-width" />
-  </head>
-  <body>
-    <Header />
+<style define:vars={{ skillColor, skillFontWeight, skillTextTransform }}>
+  h1 {
+    color: grey;
+    font-size: 4rem;
+  }
+  .skill {
+    color: var(--skillColor);
+    text-transform: var(--skillTextTransform);
+    font-weight: var(--skillFontWeight);
+  }
+</style>
 
-    <h1>My astro{identity.firstName} site</h1>
-    <h2>{pageTitle}</h2>
-    <h3>...and my Astro site!</h3>
+<BaseLayout>
+  <h1>My astro{identity.firstName} site</h1>
+  <h2>{pageTitle}</h2>
+  <h3>...and my Astro site!</h3>
 
-    <p>I am working my way through my first tutorial with Astro.</p>
-    <p>This site will become more interesting as I progress.</p>
-    <p>Here's a little about me:</p>
-    <ul>
-      <li>My name is {identity.firstName} {identity.lastName}.</li><li>
-        I live in {identity.location} and work as a {identity.occupation}.
-      </li>
-      {
-        identity.hobbies.length >= 2 && (
-          <li>
-            Two of my hobbies are: {identity.hobbies[0]} and{' '}
-            {identity.hobbies[1]}.
-          </li>
-        )
-      }
-    </ul>
-    <p>Some of my technological skills include:</p>
-    <ul>
-      {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
-    {happy && <p>I am happy to get this website deployed.</p>}
-    {finished && <p>I have finished the Astro blog tutorial.</p>}
+  <p>I am working my way through my first tutorial with Astro.</p>
+  <p>This site will become more interesting as I progress.</p>
+  <p>Here's a little about me:</p>
+  <ul>
+    <li>My name is {identity.firstName} {identity.lastName}.</li><li>
+      I live in {identity.location} and work as a {identity.occupation}.
+    </li>
     {
-      goal === 3 ? (
-        <p>My goal is to finished with the tutorial by Friday.</p>
-      ) : (
-        <p>My goal is to never finish the tutorial. Hell!</p>
+      identity.hobbies.length >= 2 && (
+        <li>
+          Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
+          .
+        </li>
       )
     }
-    <Footer />
-    <script>
-      import '../scripts/menu.js';
-    </script>
-  </body>
-</html>
+  </ul>
+  <p>Some of my technological skills include:</p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+  {happy && <p>I am happy to get this website deployed.</p>}
+  {finished && <p>I have finished the Astro blog tutorial.</p>}
+  {
+    goal === 3 ? (
+      <p>My goal is to finished with the tutorial by Friday.</p>
+    ) : (
+      <p>My goal is to never finish the tutorial. Hell!</p>
+    )
+  }
+</BaseLayout>
