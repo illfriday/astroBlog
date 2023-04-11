@@ -37,8 +37,6 @@ h1 {
   background-color: var(--linkColor);
 }
 
-
-
 .nav-links {
   width: 100%;
   top: 5rem;
@@ -84,6 +82,14 @@ h1 {
   .hamburger {
     display: none;
   }
+}
 
- 
+/* Dark Mode Styles */
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
 }
