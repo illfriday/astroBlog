@@ -15,13 +15,13 @@ tags:
     'personal',
     'reflections',
     'open journal',
-    'claiming your power',
+    'claim your power',
   ]
 ---
 
 ## Examining Dead Zones in my life
 
-In my last [post](./post-5), I expressed some of my fears about finding my Purpose.
+In my last [post](./post-5), I expressed some of my fears about finding my Purpose. I also mentioned picking up a book that freaked me out a little, **Claim Your Power** by Mastin Kipp. I have decided to start the 40 day program ,because why not? It will at least lead to some meaningful self-reflection. In that spirit, here goes nothing...
 
 **These included:**
 
