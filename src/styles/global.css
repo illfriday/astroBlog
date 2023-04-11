@@ -36,6 +36,11 @@ h1 {
   margin-bottom: 10px;
   background-color: var(--linkColor);
 }
+
+#homeTagIndex {
+  display: none;
+}
+
 .nav-links {
   width: 100%;
   top: 5rem;
@@ -79,5 +84,9 @@ h1 {
 
   .hamburger {
     display: none;
+  }
+
+  #homeTagIndex {
+    display: flex;
   }
 }

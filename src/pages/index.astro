@@ -1,9 +1,14 @@
 ---
+import TagIndex from '../components/TagIndex.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
 const pageTitle = 'astroWill';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <h2>astroWill to the Moon</h2>
   <p>A personal site for Will Prouty</p>
+  <div id="homeTagIndex">
+    <TagIndex />
+  </div>
 </BaseLayout>
