@@ -13,13 +13,15 @@ const pageTitle = 'My Coding Blog ft. Life';
   <hr />
   <ul>
     {
-      allPosts.map((post) => (
-        <Blogpost
-          url={post.url}
-          title={post.frontmatter.title}
-          pubDate={post.frontmatter.pubDate.slice(0, 10)}
-        />
-      ))
+      allPosts
+        .map((post) => (
+          <Blogpost
+            url={post.url}
+            title={post.frontmatter.title}
+            pubDate={post.frontmatter.pubDate.slice(0, 10)}
+          />
+        ))
+        .reverse()
     }
   </ul>
 </BaseLayout>
