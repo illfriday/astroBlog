@@ -2,7 +2,7 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: Another quick one
 pubDate: 2023-04-03
-description: "What I'm liking so far..."
+description: "What I'm liking about Astro so far..."
 author: I-Will
 image:
   url: 'https://astro.build/assets/blog/community-day/cover.jpg'

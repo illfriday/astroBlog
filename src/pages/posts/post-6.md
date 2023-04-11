@@ -9,7 +9,6 @@ image:
   alt: 'The word community with a heart'
 tags:
   [
-    'astro',
     'blogging',
     'learning in public',
     'personal',

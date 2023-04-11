@@ -7,15 +7,7 @@ author: 'I-Will'
 image:
   url: 'https://astro.build/assets/blog/astro-showcase/astro-showcase-screenshot.jpeg'
   alt: 'Thumbnails of the websites from the Astro showcase site'
-tags:
-  [
-    'astro',
-    'blogging',
-    'serendipity',
-    'personal',
-    'reflections',
-    'open journal',
-  ]
+tags: ['blogging', 'serendipity', 'personal', 'reflections', 'open journal']
 ---
 
 # Serendipity
