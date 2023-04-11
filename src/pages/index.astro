@@ -1,6 +1,7 @@
 ---
 import TagIndex from '../components/TagIndex.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greeting';
 
 const pageTitle = 'astroWill';
 ---
@@ -8,7 +9,40 @@ const pageTitle = 'astroWill';
 <BaseLayout pageTitle={pageTitle}>
   <h2>astroWill to the Moon</h2>
   <p>A personal site for Will Prouty</p>
+  <div id="homeGreeting">
+    <Greeting
+      client:load
+      messages={[
+        'Hi',
+        'Howzit',
+        'Cheers',
+        'Cherio',
+        'Sup',
+        'Ho',
+        'Howdy',
+        'ChinChin',
+        'EyYo',
+        'Yello',
+      ]}
+    />
+  </div>
+
   <div id="homeTagIndex">
     <TagIndex />
   </div>
 </BaseLayout>
+<style>
+  #homeTagIndex {
+    display: none;
+  }
+
+  @media screen and (min-width: 636px) {
+    #homeTagIndex {
+      display: flex;
+    }
+  }
+
+  #homeGreeting {
+    cursor: pointer;
+  }
+</style>

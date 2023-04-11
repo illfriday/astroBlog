@@ -37,9 +37,7 @@ h1 {
   background-color: var(--linkColor);
 }
 
-#homeTagIndex {
-  display: none;
-}
+
 
 .nav-links {
   width: 100%;
@@ -68,6 +66,7 @@ h1 {
   display: unset;
 }
 
+/* L size screen styles */
 @media screen and (min-width: 636px) {
   .nav-links {
     margin-left: 5em;
@@ -86,7 +85,5 @@ h1 {
     display: none;
   }
 
-  #homeTagIndex {
-    display: flex;
-  }
+ 
 }
