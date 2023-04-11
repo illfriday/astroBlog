@@ -15,6 +15,10 @@ const goal = 3;
 const skillColor = 'navy';
 const skillFontWeight = 'bold';
 const skillTextTransform = 'uppercase';
+const hobbyTextTransform = (hobby) => {
+  let transHobby = hobby.slice(0, 1).toUpperCase() + hobby.slice(1);
+  return transHobby;
+};
 import '../styles/global.css';
 ---
 
@@ -45,8 +49,8 @@ import '../styles/global.css';
     {
       identity.hobbies.length >= 2 && (
         <li>
-          Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
-          .
+          Two of my hobbies are: {hobbyTextTransform(identity.hobbies[0])}
+          and {hobbyTextTransform(identity.hobbies[1])}
         </li>
       )
     }
