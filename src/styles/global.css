@@ -86,10 +86,13 @@ h1 {
 
 /* Dark Mode Styles */
 html.dark {
-  background-color: #0d0950;
-  color: #fff;
+  background-color: #070619;
+  color: #e1dada;
 }
 
 .dark .nav-links a {
-  color: #fff;
+  color: #b2b8c5;
+}
+.dark .skill {
+  color: rgb(135, 140, 146);
 }

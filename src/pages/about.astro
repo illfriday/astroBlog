@@ -10,7 +10,7 @@ const identity = {
 };
 const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'github', 'Astro'];
 const happy = true;
-const finished = false;
+const finished = true;
 const goal = 3;
 const skillColor = 'navy';
 const skillFontWeight = 'bold';
@@ -31,6 +31,9 @@ import '../styles/global.css';
     color: var(--skillColor);
     text-transform: var(--skillTextTransform);
     font-weight: var(--skillFontWeight);
+  }
+  .dark .skill li {
+    color: rgb(117, 137, 154);
   }
 </style>
 
@@ -62,10 +65,8 @@ import '../styles/global.css';
   {happy && <p>I am happy to get this website deployed.</p>}
   {finished && <p>I have finished the Astro blog tutorial.</p>}
   {
-    goal === 3 ? (
+    goal === 3 && !finished ? (
       <p>My goal is to finished with the tutorial by Friday.</p>
-    ) : (
-      <p>My goal is to never finish the tutorial. Hell!</p>
-    )
+    ) : null
   }
 </BaseLayout>
