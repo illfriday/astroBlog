@@ -1,0 +1,35 @@
+---
+import MarkdownPostLayout from '../../layouts/MarkdownPostLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Blogpost from '../../components/Blogpost.astro';
+
+export async function getStaticPaths() {
+   const posts  =  await fetch(`http://localhost:1337/api/posts`).then(res => res.json())
+   // console.log('first one', posts.data[0].attributes.slug);
+   // ^^^this will log correctly^^^
+   return posts.data.map(post => ({params : {slug:post.attributes.slug}}))
+}
+
+const {slug} = Astro.params;
+
+const postItem = await fetch(`http://localhost:1337/api/posts?populate[author][sort][0]&populate[categories][sort][0][filters][slug][$eq]=${slug}`).then(res => res.json());
+// console.log(postItem.data[0].attributes.title)
+// let postItemTags = [];
+// const pushTags = () => {postItem.data[0].attributes.categories.data.map(postTag => postItemTags.push(postTag.attributes.name))};pushTags();
+// ;
+const {
+   title = postItem.data[0].attributes.title,
+   description = postItem.data[0].attributes.title,
+   pubDate = postItem.data[0].attributes.pubDate,
+   author = postItem.data[0].attributes.author,
+   postTags = postItem.data[0].attributes.categories,
+   content = postItem.data[0].attributes.content
+   } = Astro.props;
+
+
+---
+
+<BaseLayout pageTitle={title}>
+   <!-- {console.log("post item",postItem.data[0].attributes.title)} -->
+<MarkdownPostLayout pageTitle= {title} url={postItem.slug} description = {description} pubDate={pubDate} author={author} tags={postTags} content = {content}/>
+</BaseLayout>
