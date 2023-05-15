@@ -2,6 +2,7 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Another quack one'
 pubDate: 2023-04-03
+publishedAt: '2023-04-15T05:46:10.908Z'
 description: 'This is the second post of my new blog built with Astro.'
 author: 'I-Will'
 image:

@@ -2,6 +2,7 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: The Dead Zone
 pubDate: 2023-04-11
+publishedAt: '2023-04-15T05:46:10.908Z'
 description: 'Claiming Your Power: Day 1'
 author: I-Will
 image:

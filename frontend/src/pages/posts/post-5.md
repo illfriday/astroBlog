@@ -2,6 +2,7 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: Finding Your Purpose
 pubDate: 2023-04-08
+publishedAt: '2023-04-15T05:46:10.908Z'
 description: 'Reflections on finding my purpose and happiness'
 author: I-Will
 image:

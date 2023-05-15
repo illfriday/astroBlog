@@ -2,6 +2,7 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: Another quick one
 pubDate: 2023-04-03
+publishedAt: '2023-04-15T05:46:10.908Z'
 description: "What I'm liking about Astro so far..."
 author: I-Will
 image:

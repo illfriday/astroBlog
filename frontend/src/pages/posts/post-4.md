@@ -2,6 +2,7 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: Templating with Astro
 pubDate: 2023-04-04
+publishedAt: '2023-04-15T05:46:10.908Z'
 description: 'Using Markdown files along with tamplating Layouts to generate blog posts'
 author: I-Will
 image:
