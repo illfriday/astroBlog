@@ -1,11 +1,10 @@
-export default async function GetAllBlogposts() {
-  const postItems = await fetch(
-    `http://localhost:1337/api/posts?populate[author][sort][0]&populate[categories][sort][0]`
+export default async function GetBlogpostsByCategory(category) {
+  const catData = await fetch(
+    `http://localhost:1337/api/categories?populate[posts][sort][0]`
   ).then((res) => res.json());
-  // console.log(postItems.data);
-  let blogpostsFormatted = postItems.data.map((item) => {
-    const categories = [];
-    const catData = item.attributes.categories.data;
+  // console.log(catData.data);
+  let blogpostsInCat = catData.data.map((cat) => {
+    
     //if there is data for the post categories, push it to the cat[]
     if (catData) {
       catData.map((cat) => {

@@ -1,19 +1,20 @@
 ---
 import Blogpost from '../../components/Blogpost.astro';
+import GetAllBlogposts from '../../data/GetAllBlogposts';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 //Astro provides getStaticPaths() to generate dynamic routing for the tag pages
 export async function getStaticPaths() {
-  //await all posts in the /posts folder
-  const allPosts = await Astro.glob('../posts/*.md');
-  //to get an array fo all the tags, we create a Set from the post pages frontmatter data. the Set structure eliminates duplicates and then we return a flattened array of all unique tags
+  //await all posts from Strapi
+  const allPosts = await GetAllBlogposts();
+  //to get an array fo all the tags, we create a Set from the post pages. the Set structure eliminates duplicates and then we return a flattened array of all unique tags
   const uniqueTags = [
-    ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
+    ...new Set(allPosts.map((post) => post.categories).flat()),
   ];
   //mapping through the unique tags, for each tag we return an OBJECT with the params of the unique tag and a list of the posts which contain the unique tag.
   // This is used within the BaseLayout to generate pages with the tag name dictated by params and the post urls and titles in a list
   return uniqueTags.map((tag) => {
     const filteredPosts = allPosts.filter((post) =>
-      post.frontmatter.tags.includes(tag)
+      post.categories.includes(tag)
     );
     return { params: { tag }, props: { posts: filteredPosts } };
   });
@@ -28,7 +29,7 @@ const { posts } = Astro.props;
     {
       posts
         .map((post) => (
-          <Blogpost url={post.url} title={post.frontmatter.title} />
+          <Blogpost url={`../posts/${post.slug}`} title={post.title} />
         ))
         .reverse()
     }
