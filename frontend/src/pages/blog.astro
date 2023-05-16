@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Blogpost from '../components/Blogpost.astro';
+import GetAllBlogposts from '../data/GetAllBlogposts';
+const data = await GetAllBlogposts();
+// console.log(data);
+const pageTitle = 'My Coding Blog ft. Life';
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h2>
+    A personal blog detailing my coding journey and the life that happens along
+    the way.
+  </h2>
+  <hr />
+  <ul>
+    {
+      data
+        .map((post) => (
+          <Blogpost
+            url={`posts/${post.slug}`}
+            title={post.title}
+            pubDate={post.publishedAt.slice(0, 10)}
+          />
+        ))
+        .reverse()
+    }
+  </ul>
+</BaseLayout>
