@@ -2,19 +2,26 @@
 import MarkdownPostLayout from '../../layouts/MarkdownPostLayout.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import GetBlogpostBySlug from '../../data/GetBlogpostBySlug';
+import GetAllBlogposts from '../../data/GetAllBlogposts';
 
 export async function getStaticPaths() {
-   const posts  =  await fetch(`http://localhost:1337/api/posts`).then(res => res.json())
+  const data = await GetAllBlogposts()
+   // allPosts().then((items) => {
+   //    const returned: string[] = items;
+   //    return returned;
+   // })
    // console.log('first one', posts.data[0].attributes.slug);
    // ^^^this will log correctly^^^
-   return posts.data.map(post => ({params : {slug:post.attributes.slug}}))
+   const result = data.map((post) => ({params : {slug:post.slug}}))
+   return result;
 }
 
 const {slug} = Astro.params;
 const data = await GetBlogpostBySlug(slug);
+console.log(data);
 ---
 
 <BaseLayout pageTitle={data.title}>
    <!-- {console.log("post item",postItem.data[0].attributes.title)} -->
-<MarkdownPostLayout pageTitle= {data.title} url=`posts/${data.slug}` description = {data.description} publishedAt={data.publishedAt} author={data.author} tags={data.postTags} content = {data.content}/>
+<MarkdownPostLayout pageTitle= {data.title} url=`posts/${data.slug}` description = {data.description} createdAt={data.createdAt} author={data.author} tags={data.postTags} content = {data.content}/>
 </BaseLayout>

@@ -1,11 +1,11 @@
 ---
 
-const {  publishedAt, description, author, categories, content } = Astro.props;
+const {  createdAt, description, author, categories, content } = Astro.props;
 ---
 
 
   <p><em>{description}</em></p>
-  <p>Published on: {publishedAt.slice(0, 10)}</p>
+  <p>Published on: {createdAt}</p>
   <p>Written by: {author}</p>
   <!-- <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} /> -->
   <p>{content}</p>
