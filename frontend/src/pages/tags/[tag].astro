@@ -1,19 +1,21 @@
 ---
 import Blogpost from '../../components/Blogpost.astro';
-import GetAllBlogposts from '../../data/GetAllBlogposts';
+import GetAllBlogposts from '../../data/GetAllBlogposts'
 import BaseLayout from '../../layouts/BaseLayout.astro';
 //Astro provides getStaticPaths() to generate dynamic routing for the tag pages
+
 export async function getStaticPaths() {
   //await all posts from Strapi
-  const allPosts = await GetAllBlogposts();
+  const data = await GetAllBlogposts();
   //to get an array fo all the tags, we create a Set from the post pages. the Set structure eliminates duplicates and then we return a flattened array of all unique tags
   const uniqueTags = [
-    ...new Set(allPosts.map((post) => post.categories).flat()),
+    ...new Set(data.map((post) => post.categories).flat()),
   ];
+  console.log(uniqueTags);
   //mapping through the unique tags, for each tag we return an OBJECT with the params of the unique tag and a list of the posts which contain the unique tag.
   // This is used within the BaseLayout to generate pages with the tag name dictated by params and the post urls and titles in a list
   return uniqueTags.map((tag) => {
-    const filteredPosts = allPosts.filter((post) =>
+    const filteredPosts = data.filter((post) =>
       post.categories.includes(tag)
     );
     return { params: { tag }, props: { posts: filteredPosts } };
