@@ -27,13 +27,12 @@ export default defineConfig({
               title: 'Sanity Studio',
               apiId: '6n7ix93k',
               buildHookId: 'https://api.netlify.com/build_hooks/64889e0d26f15b25b0f8cb5f',
-              name: 'astrowill-netlify-app-studio',
             },
             {
               title: 'AstrowillBlog',
               apiId: '6n7ix93k',
               buildHookId: 'https://api.netlify.com/build_hooks/64889e0d26f15b25b0f8cb5f',
-              name: 'astrowill-netlify-app-web',
+
               url: 'https://astrowill.netlify.app/',
             },
           ],
