@@ -31,7 +31,7 @@ export default defineConfig({
             },
             {
               title: 'AstrowillBlog',
-              apiId: '6n7ix93k',
+              apiId: 'f383b836-03f3-4a54-b587-7b21b9ad6dee',
               buildHookId: 'https://api.netlify.com/build_hooks/64889e0d26f15b25b0f8cb5f',
               name: 'astrowill',
               url: 'https://astrowill.netlify.app/',
