@@ -8,7 +8,7 @@ const {  createdAt, description, author, categories, content } = Astro.props;
   <p>Published on: {createdAt}</p>
   <p>Written by: {author}</p>
   <!-- <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} /> -->
-  <Markdown of={content}/>
+  <p>{await markdown(content)}</p>
   <div class="tags">
     <!-- {
       categories.map((tagData) => {
