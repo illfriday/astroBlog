@@ -23,5 +23,5 @@ const data = await GetBlogpostBySlug(slug);
 
 <BaseLayout pageTitle={data.title}>
    <!-- {console.log("post item",postItem.data[0].attributes.title)} -->
-<MarkdownPostLayout pageTitle= {data.title} url=`posts/${data.slug}` description = {data.description} publishedAt={data.publishedAt} author={data.author} tags={data.postTags} content = {data.content}/>
+<MarkdownPostLayout pageTitle= {data.title} url=`posts/${data.slug}` description = {data.description} publishedAt={data.publishedAt} author={data.author} tags={data.tags} content = {data.content}/>
 </BaseLayout>
