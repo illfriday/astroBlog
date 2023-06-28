@@ -18,10 +18,10 @@ export async function getStaticPaths() {
 
 const {slug} = Astro.params;
 const data = await GetBlogpostBySlug(slug);
-console.log(data);
+// console.log(data);
 ---
 
 <BaseLayout pageTitle={data.title}>
    <!-- {console.log("post item",postItem.data[0].attributes.title)} -->
-<MarkdownPostLayout pageTitle= {data.title} url=`posts/${data.slug}` description = {data.description} createdAt={data.createdAt} author={data.author} tags={data.postTags} content = {data.content}/>
+<MarkdownPostLayout pageTitle= {data.title} url=`posts/${data.slug}` description = {data.description} publishedAt={data.publishedAt} author={data.author} tags={data.postTags} content = {data.content}/>
 </BaseLayout>

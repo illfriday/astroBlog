@@ -7,10 +7,10 @@ export default async function GetBlogpostBySlug(slug) {
   // let postItemTags = [];
   // const pushTags = () => {postItem.data[0].attributes.categories.data.map(postTag => postItemTags.push(postTag.attributes.name))};pushTags();
   // ;
-  console.log(postItem.result[0]);
+  // console.log(postItem.result[0]);
   return {
     title: postItem.result[0].title,
-    publishedAt: postItem.result[0].publishedAt,
+    publishedAt: postItem.result[0]._createdAt,
     author: postItem.result[0].author,
     categories: postItem.result[0].categories,
     content: postItem.result[0].content,
