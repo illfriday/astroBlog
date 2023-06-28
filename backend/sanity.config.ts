@@ -5,6 +5,8 @@ import {schemaTypes} from './schemas'
 import {getStartedPlugin} from './plugins/sanity-plugin-tutorial'
 import {dashboardTool} from '@sanity/dashboard'
 import {netlifyWidget} from 'sanity-plugin-dashboard-widget-netlify'
+import {markdownSchema} from 'sanity-plugin-markdown/next'
+import {CustomMarkdownInput} from './plugins/CustomMarkdownInput/CustomMarkdownInput'
 
 const devOnlyPlugins = [getStartedPlugin()]
 
@@ -40,6 +42,7 @@ export default defineConfig({
         }),
       ],
     }),
+    markdownSchema({input: CustomMarkdownInput}),
     ...(isDev ? devOnlyPlugins : []),
   ],
 
