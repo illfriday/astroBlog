@@ -1,3 +1,5 @@
+import {CustomMarkdownInput} from '../plugins/CustomMarkdownInput/CustomMarkdownInput'
+
 export default {
   name: 'article',
   type: 'document',
@@ -28,6 +30,7 @@ export default {
       name: 'content',
       type: 'markdown',
       title: 'Content',
+      components: {input: CustomMarkdownInput},
     },
     {
       name: 'slug',
